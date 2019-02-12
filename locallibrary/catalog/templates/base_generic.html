@@ -38,6 +38,11 @@
 </body>
 </html>
 
+{% if perms.catalog.can_mark_returned %}
+<h3>Staff</h3>
+<li><a href="{% url 'all-borrowed'%}">All Borrowed</a></li>
+{% endif %}
+
 {% block pagination %}
   {% if is_paginated %}
     <div class="pagination">
